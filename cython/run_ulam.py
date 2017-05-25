@@ -4,7 +4,7 @@ from sys import argv
 try:
     m = int(argv[1])
 except:
-    m = 70
+    m = 100
 ulam = compute_ulam_set(m)
 print(len(ulam))
 print(ulam)

@@ -1,16 +1,19 @@
-cdef infinity_norm(v):
+from sys import argv
+
+
+def infinity_norm(v):
     return max(abs(v[0]), abs(v[1]))
 
 
-cdef two_norm_squared(v):
+def two_norm_squared(v):
     return v[0]**2 + v[1]**2
 
 
-cdef vector_sum(v, w):
+def vector_sum(v, w):
     return (v[0]+w[0], v[1]+w[1])
 
 
-cpdef compute_ulam_set(n, init_vectors=[(1, 0), (0, 1)], norm=infinity_norm):
+def compute_ulam_set(n, init_vectors=[(1, 0), (0, 1)], norm=infinity_norm):
     # ulam_set is the set of all ulam elements found so far
     ulam_set = set(init_vectors)
     old_ulam_set = ulam_set.copy()
@@ -61,3 +64,11 @@ cpdef compute_ulam_set(n, init_vectors=[(1, 0), (0, 1)], norm=infinity_norm):
         ulam_set = ulam_set.union(new_ulam)
 
     return ulam_set
+
+try:
+    m = int(argv[1])
+except:
+    m = 10
+ulam = sorted(compute_ulam_set(m))
+print(ulam)
+print(len(ulam))

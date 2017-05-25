@@ -1,2 +1,1 @@
 python setup.py build_ext --inplace
-time python run_ulam.py 100
