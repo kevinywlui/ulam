@@ -44,7 +44,7 @@ def compute_ulam_set(n, init_vectors=[(1, 0), (0, 1)], norm=infinity_norm):
 try:
     m = int(argv[1])
 except:
-    m = 10
+    m = 50
 ulam = compute_ulam_set(m)
 # print(ulam)
 print(len(ulam))
