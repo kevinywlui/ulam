@@ -7,3 +7,4 @@ except:
     m = 70
 ulam = compute_ulam_set(m)
 print(len(ulam))
+print(ulam)
